@@ -31,4 +31,5 @@ Due to license issues, this implementation uses two publicly avaiable software p
 We have uploaded our [demo video](http://youtu.be/S4PQ63duO-I) in youtube. The trained model should perform with similar performance as shown in the demo video. Otherwise, the software might have been used in an inappropriate way.
 
 ## Notes
-1. Training typically requests at least 20 GB of memory (based on the default parameters settings). Training codes are implemented with parallel machenism and a multicore CPU + parpool enabled Matlab environment can significantly speed up the training time.
+1. Training typically requests at least 20 GB of memory (based on the default parameters settings). Training codes are implemented with parallel machenism and a multicore CPU + parpool enabled Matlab environment can significantly reduce the training time.
+2. The bounding box given in the testing phase should be equally noisy with that in the training phase. According to our experience, the definition of **equally noisy** indicates: 1) no bias; and 2) equal variance. Bounding box variance larger than 1/6 of face size is regarded as very noisy. Please consider to increase the searching stages into 4 stages if possible.
