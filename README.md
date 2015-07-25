@@ -18,7 +18,7 @@ If you use the codes as part of your research project, please cite our work as f
 ```
 
 ## Dependency
-Due to license issues, this implementation uses two publicly avaiable software package: 
+Due to license issues, this implementation uses two publicly avaiable software packages: 
 1. [VLFeat](https://github.com/vlfeat/vlfeat)
 2. [LibSVM](https://github.com/cjlin1/libsvm).
 
