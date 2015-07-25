@@ -19,13 +19,13 @@ If you use the codes as part of your research project, please cite our work as f
 ```
 
 ## Dependency
-Due to license issues, this implementation uses two publicly avaiable software packages: 
+Due to license issues, this implementation uses two publicly avaiable software packages as opposed to our original implementation: 
 1. [VLFeat](https://github.com/vlfeat/vlfeat)
 2. [LibSVM](https://github.com/cjlin1/libsvm).
 
 ## Installation
 1. Put all the required dependency packages under the `external` folder. Matlab compatible bainary files must exist. Please note we have put `vl_sift_toosimple.c` in the `external` folder. Please put it into the directory of `external/vlfeat-0.9.20/toolbox/sift` before compiling (and hence its relative Matlab compatible binary file would appear after compiling). This would slightly speed up sift extraction.
-2. 
+2. Put all the 3148 (for training) + 689 (for testing) in the `data` folder. All images could be downloaded at [IBUG page](http://ibug.doc.ic.ac.uk/resources/facial-point-annotations/). Only LFPW, Helen, AFW and IBUG set are required. Please change one of the filename in IBUG set from `x` to `y` to avoid space in filename.
 
 ## Demo Video
 We have uploaded our [demo video](http://youtu.be/S4PQ63duO-I) in youtube. The trained model should perform with similar performance as shown in the demo video. Otherwise, the software might have been used in an inappropriate way.
