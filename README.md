@@ -24,6 +24,10 @@ Due to license issues, this implementation uses two publicly avaiable software p
 
 ## Installation
 1. Put all the required dependency packages under the `external` folder. Matlab compatible bainary files must exist. Please note we have put 
+2. 
+
+## Demo Video
+We have uploaded our [demo video](http://youtu.be/S4PQ63duO-I) in youtube. The trained model should perform with similar performance as shown in the demo video. Otherwise, the software might have been used in an inappropriate way.
 
 ## Notes
 1. Training typically requests at least 20 GB of memory (based on the default parameters settings). Training codes are implemented with parallel machenism and a multicore CPU + parpool enabled Matlab environment can significantly speed up the training time.
