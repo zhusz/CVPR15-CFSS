@@ -1,4 +1,5 @@
 # CVPR15-CFSS
+Note this repo is still under construction and would be expected to be finished on Monday.
 ------
 
 ## Description
@@ -23,7 +24,7 @@ Due to license issues, this implementation uses two publicly avaiable software p
 2. [LibSVM](https://github.com/cjlin1/libsvm).
 
 ## Installation
-1. Put all the required dependency packages under the `external` folder. Matlab compatible bainary files must exist. Please note we have put 
+1. Put all the required dependency packages under the `external` folder. Matlab compatible bainary files must exist. Please note we have put `vl_sift_toosimple.c` in the `external` folder. Please put it into the directory of `external/vlfeat-0.9.20/toolbox/sift` before compiling (and hence its relative Matlab compatible binary file would appear after compiling). This would slightly speed up sift extraction.
 2. 
 
 ## Demo Video
