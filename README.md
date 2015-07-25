@@ -17,9 +17,13 @@ If you use the codes as part of your research project, please cite our work as f
 }
 ```
 
-## Dependeny
+## Dependency
 Due to license issues, this implementation uses two publicly avaiable software package: 
 1. [VLFeat](https://github.com/vlfeat/vlfeat)
 2. [LibSVM](https://github.com/cjlin1/libsvm).
 
+## Installation
+1. Put all the required dependency packages under the `external` folder. Matlab compatible bainary files must exist. Please note we have put 
 
+## Notes
+1. Training typically requests at least 20 GB of memory (based on the default parameters settings). Training codes are implemented with parallel machenism and a multicore CPU + parpool enabled Matlab environment can significantly speed up the training time.
