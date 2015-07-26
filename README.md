@@ -30,27 +30,16 @@ Due to license issues, this implementation uses two publicly avaiable software p
 1. Put all the required dependency packages under the `external` folder. Matlab compatible bainary files must exist. Please note we have put `vl_sift_toosimple.c` in the `codes_released/feat/SIFT` folder. Please put it into the directory of `external/vlfeat-0.9.20/toolbox/sift` before compiling (and hence its relative Matlab compatible binary file would appear after compiling). This would slightly speed up sift extraction.
 2. Put all the 3148 (for training) + 689 (for testing) in the `data` folder. All images could be downloaded at [IBUG page](http://ibug.doc.ic.ac.uk/resources/facial-point-annotations/). Only LFPW, Helen, AFW and IBUG set are required. Please change one of the filename in IBUG set from `image_092⋅_01.jpg` to `image_092_01.jpg` to avoid space in file name.
 
-## How to evaluate
-We have put the pre-trained models in the `model` folder. Users can directly run testing according to the following command to reproduce all the results in our paper:
+## Training and Testing
+To train the model using the default setting, simply use the following command:
 ```matlab
->>inferenceCFSS;
+>> getParametricModels; addAll; learnCFSS;
 ```
+Model files would be expected to appear in the `model` folder.
 
-## How to train
-Users can reproduce these models by running the following command for training:
+To do testing, simply use the following command:
 ```matlab
->>getParametricModels;addAll;learnCFSS;
-```
-
-## How to compare with baseline
-Simply change two parameters can the codes degenerate to SDM, by
-```matlab
-config.stageTot = 1;
-config.regs.IterTot = 4; % or much bigger to see whether trivially adding more cascade would improve the accuracy.
-```
-Training and testing command is similar to those above:
-```matlab
->>getParametricModels;addAll;learnCFSS;inferenceCFSS;
+>> inferenceCFSS;
 ```
 
 ## How to speed up
