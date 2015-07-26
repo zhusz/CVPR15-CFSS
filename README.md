@@ -36,14 +36,24 @@ We have uploaded our [demo video](http://youtu.be/S4PQ63duO-I) in youtube. The t
 3. 
 
 ## Common Errors
-1. Why is the function `svmtrain` or `svmpredict` prompt errors?
+1. Why does the function `svmtrain` or `svmpredict` prompt errors?
 
    Please note Matlab itself contains such two functions, and their interface is slightly different from those in libSVM. Please make sure you have include the path to libSVM.
    
-2.
+2. 
 
 ## Reviews and Rebuttal
-Reviewer 2 of our work raise several concerns. Here we would like to address his / her concerns by directly referring to our codes. Reviewer 2 can directly check our responses by performing several experiments according to our guide below.
+Reviewer 2 of our work has raised several concerns. Here we would like to address his / her concerns by directly referring to our codes. Reviewer 2 can directly check our responses by performing several experiments according to our guide below.
+1. It is not clear how different the coarse-to-fine approach is significantly different to the cascade regression approach. It appears that the improvement is obtained by regressing to the best candidate base shape, which could be interpreted as adding additional stages at the start of the cascade. It is not clear why after the first stage the standard approach would not work (or what impact stage 2 or 3 has). 
+
+  ..1. Cascading more iterations cannot improve performance. Please change the configuration as follows (which degenerates to SDM) and re-train and evaluate the model to see results.
+  ```matlab
+  config.stageTot = 1;
+  config.regs.iterTot = 4; % or much bigger
+  ```
+  ..2. We note finding similar shape examplars is a non-trivial task. See our results on the 565th samples (out of 689), which is exactly our Figure 1 in the paper. A plain SDM cannot find candidate shapes with big mouth.
+ 
+2. 
 
 ## Feedback
 Suggestions and opinions of this work (both positive and negative) are greatly welcome. Please contact the author by sending email to `zhshzhutah2@gmail.com`.
