@@ -37,7 +37,10 @@ We have uploaded our [demo video](http://youtu.be/S4PQ63duO-I) in youtube. The t
 
 ## Common Errors
 1. Why is the function `svmtrain` or `svmpredict` prompt errors?
+
 ...Please note Matlab itself contains such two functions, and their interface is slightly different from those in libSVM. Please make sure you have include the path to libSVM.
+
+2.
 
 ## Reviews and Rebuttal
 
