@@ -44,6 +44,7 @@ We have uploaded our [demo video](http://youtu.be/S4PQ63duO-I) in youtube. The t
 
 ## Reviews and Rebuttal
 Reviewer 2 of our work has raised several concerns. Here we would like to address his / her concerns by directly referring to our codes. Reviewer 2 can directly check our responses by performing several experiments according to our guide below.
+
 1. It is not clear how different the coarse-to-fine approach is significantly different to the cascade regression approach. It appears that the improvement is obtained by regressing to the best candidate base shape, which could be interpreted as adding additional stages at the start of the cascade. It is not clear why after the first stage the standard approach would not work (or what impact stage 2 or 3 has). 
 
     1. Cascading more iterations cannot improve performance. Please change the configuration as follows (which degenerates to SDM) and re-train and evaluate the model to see results.
