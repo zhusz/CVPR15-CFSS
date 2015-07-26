@@ -36,19 +36,7 @@ Due to license issues, this implementation uses two publicly avaiable software p
 3.  
 
 ## How to compare with baseline
-Reviewer 2 of our work has raised several concerns. Here we would like to address his / her concerns by directly referring to our codes. Reviewer 2 can directly check our responses by performing several experiments according to our guide below.
 
-1. It is not clear how different the coarse-to-fine approach is significantly different to the cascade regression approach. It appears that the improvement is obtained by regressing to the best candidate base shape, which could be interpreted as adding additional stages at the start of the cascade. It is not clear why after the first stage the standard approach would not work (or what impact stage 2 or 3 has). 
-
-    *  Trivially cascading more iterations cannot improve performance. Please change the configuration in `addAll.m` as follows (which degenerates to SDM) and re-train and evaluate the model to see results.
-  ```matlab
-  config.stageTot = 1;
-  config.regs.iterTot = 4; % or much bigger
-  ```
-    *  The functionality of each searching stage is acutally that the error distribution descripancy between training and testing set along the cascading series is rectified. The transformation is also re-evaluated.
-    *  We note finding similar shape examplars is a non-trivial task. See our results on the 565th samples (out of 689), which is exactly our Figure 1 in the paper. A plain SDM cannot find candidate shapes with big mouth in this case. The shape is always trapped in local optima that the nose landmarks are stayed on the upper mouth.
-## How do we beat SDM
-To validate our algorithm over the baseline SDM, users can directly do the experiments by simply changing two parameters in `addAll.m`. Please refer to the first question in the **Reviews and Rebuttal** section.
 
 ## Feedback
 Suggestions and opinions of this work (both positive and negative) are greatly welcome. Please contact the author by sending email to `zhshzhutah2@gmail.com`.
