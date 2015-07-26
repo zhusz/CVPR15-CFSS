@@ -4,7 +4,7 @@ Note this repo is still under construction and would be expected to be finished 
 
 ## Description
 
-This is the implementation of Shizhan Zhu's CVPR-15 work [Face Alignment by Coarse-to-Fine Shape Searching](http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Zhu_Face_Alignment_by_2015_CVPR_paper.pdf). It is open source under BSD-3 license (see the `LICENSE` file). Codes can be used freely only for acedemic purpose. If you want to apply it to industrial products, please send an email to Shizhan Zhu at `zhshzhutah2@gmail.com` first.
+This is the implementation of Shizhan Zhu et al.'s CVPR-15 work [Face Alignment by Coarse-to-Fine Shape Searching](http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Zhu_Face_Alignment_by_2015_CVPR_paper.pdf). It is open source under BSD-3 license (see the `LICENSE` file). Codes can be used freely only for acedemic purpose. If you want to apply it to industrial products, please send an email to Shizhan Zhu at `zhshzhutah2@gmail.com` first.
 
 ## Demo Video
 We have uploaded our [demo video](http://youtu.be/S4PQ63duO-I) in youtube. The trained model should perform with similar performance as shown in the demo video. Otherwise, the software might have been used in an inappropriate way.
@@ -40,14 +40,18 @@ Reviewer 2 of our work has raised several concerns. Here we would like to addres
 
 1. It is not clear how different the coarse-to-fine approach is significantly different to the cascade regression approach. It appears that the improvement is obtained by regressing to the best candidate base shape, which could be interpreted as adding additional stages at the start of the cascade. It is not clear why after the first stage the standard approach would not work (or what impact stage 2 or 3 has). 
 
-    *  Cascading more iterations cannot improve performance. Please change the configuration in `addAll.m` as follows (which degenerates to SDM) and re-train and evaluate the model to see results.
+    *  Trivially cascading more iterations cannot improve performance. Please change the configuration in `addAll.m` as follows (which degenerates to SDM) and re-train and evaluate the model to see results.
   ```matlab
   config.stageTot = 1;
   config.regs.iterTot = 4; % or much bigger
   ```
-    *  We note finding similar shape examplars is a non-trivial task. See our results on the 565th samples (out of 689), which is exactly our Figure 1 in the paper. A plain SDM cannot find candidate shapes with big mouth.
+    *  The functionality of each searching stage is acutally that the error distribution descripancy between training and testing set along the cascading series is rectified. The transformation is also re-evaluated.
+    *  We note finding similar shape examplars is a non-trivial task. See our results on the 565th samples (out of 689), which is exactly our Figure 1 in the paper. A plain SDM cannot find candidate shapes with big mouth in this case. The shape is always trapped in local optima that the nose landmarks are stayed on the upper mouth.
  
-2. 
+2. No error bounds on the accuracy which makes it impossible to know whether or not the results are significantly better than previous approaches.
+   In rebuttal period we thought the reviewer might refer it as the distribution of errors on 689 samples. We replied that due to long tail error distribution, most previous works have larger std than mean. After reading one nice peer work [cGPRT](Face Alignment Using Cascade Gaussian Process Regression Trees), we believe the reviewer is referring to different trials of evaluation. Actually the only ramdomness of inference comes from initial shapes sampling at the beginning of each searching stage, and most sensitive one, from the first stage. Users can check this randomness simply by running our inference script for multiple times.
+
+
 
 ## How do we beat SDM
 To validate our algorithm over the baseline SDM, users can directly do the experiments by simply changing two parameters in `addAll.m`. Please refer to the first question in the **Reviews and Rebuttal** section.
