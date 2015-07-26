@@ -64,9 +64,6 @@ Reviewer 2 of our work has raised several concerns. Here we would like to addres
 ## How do we beat SDM
 To validate our algorithm over the baseline SDM, users can directly do the experiments by simply changing two parameters in `addAll.m`. Please refer to the first question in the **Reviews and Rebuttal** section.
 
-## Performance on LFPW 29 points
-We didn't report LFPW 29-pts results in our paper. One reason is that it is saturated. Another reason is that, our reimplemented algorithms of many pervious work works significantly worse than their reported in the paper. Our results on LFPW-29 pts is 3.76. Best of previous methods in our experiments is 4.02. We use 782 images due to loss of URL as training set.
-
 ## Feedback
 Suggestions and opinions of this work (both positive and negative) are greatly welcome. Please contact the author by sending email to `zhshzhutah2@gmail.com`.
 
