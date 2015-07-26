@@ -1,6 +1,6 @@
 # CVPR15-CFSS
-Released on July 25, 2015
 ------
+Released on July 25, 2015
 
 ## Description
 
