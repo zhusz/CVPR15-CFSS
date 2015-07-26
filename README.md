@@ -46,19 +46,19 @@ Users can reproduce these models by running the following command for training:
 Simply change two parameters can the codes degenerate to SDM, by
 ```matlab
 config.stageTot = 1;
-config.regs.IterTot = 4; % or much bigger to see whether trivially adding more cascade woule improve the accuracy.
+config.regs.IterTot = 4; % or much bigger to see whether trivially adding more cascade would improve the accuracy.
 ```
 Training and testing command is similar to those above:
 ```matlab
 >>getParametricModels;addAll;learnCFSS;inferenceCFSS;
 ```
 
+## How to speed up
+We need to point out again, in this implementation, we can only use the publicly available packages [VLFeat](https://github.com/vlfeat/vlfeat) and [LibSVM](https://github.com/cjlin1/libsvm) due to open source license issues. If you want a faster performance, you need to pay attention to some details like integral map sharing tricks. For one test case, the integral maps are shared for all extraction within same searching stage. Classifiers should also be replaced by much faster ones.
+
 ## Notes
 1. Training typically requests at least 20 GB of memory (based on the default parameters settings). Training codes are implemented with parallel machenism and a multicore CPU + parpool enabled Matlab environment can significantly reduce the training time.
 2. The bounding box given in the testing phase should be equally noisy with that in the training phase. According to our experience, the definition of **equally noisy** indicates: 1) no bias; and 2) equal variance. Bounding box variance larger than 1/3 of face size is regarded as very noisy. Under such circumstances, please consider to increase the searching stages into 4 stages if possible.
-3. 
-
-
 
 ## Feedback
 Suggestions and opinions of this work (both positive and negative) are greatly welcome. Please contact the author by sending email to `zhshzhutah2@gmail.com`.
