@@ -42,6 +42,8 @@ To do testing, simply use the following command:
 >> inferenceCFSS;
 ```
 
+Please be remind that functions inclusion is automatically done in `addAll.m` script. If you directly do testing, don't forget to add all required paths.
+
 ## How to speed up
 We need to point out again, in this implementation, we can only use the publicly available packages [VLFeat](https://github.com/vlfeat/vlfeat) and [LibSVM](https://github.com/cjlin1/libsvm) due to open source license issues. If you want a faster performance, you need to pay attention to some details like integral map sharing tricks. Classifiers should also be replaced by much faster ones like linear kernel.
 
