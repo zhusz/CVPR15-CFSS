@@ -47,7 +47,7 @@ After testing, the variable `estimatedPose` would exist in the workspace, which 
 Pre-trained models have been put into the `model` folder. Please be reminded that functions inclusion is automatically done in `addAll.m` script. If you directly do testing, don't forget to add all required paths.
 
 ## Formats
-Shape is represented as a 2n dimensional vector each in the format of [x1,x2,...,xn,y1,y2,...,yn]. Format of bounding box is [left, right, top, bottom].
+Shape is represented as a 2n dimensional vector each in the format of `[x1,x2,...,xn,y1,y2,...,yn]`. Format of bounding box is `[left, right, top, bottom]`.
 
 ## How to speed up
 We need to point out again, in this implementation, we can only use the publicly available packages [VLFeat](https://github.com/vlfeat/vlfeat) and [LibSVM](https://github.com/cjlin1/libsvm) due to open source license issues. If you want a faster performance, you need to pay attention to some details like integral map sharing tricks. Classifiers should also be replaced by much faster ones like linear kernel.
