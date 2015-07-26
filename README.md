@@ -47,12 +47,12 @@ Reviewer 2 of our work has raised several concerns. Here we would like to addres
 
 1. It is not clear how different the coarse-to-fine approach is significantly different to the cascade regression approach. It appears that the improvement is obtained by regressing to the best candidate base shape, which could be interpreted as adding additional stages at the start of the cascade. It is not clear why after the first stage the standard approach would not work (or what impact stage 2 or 3 has). 
 
-    1. Cascading more iterations cannot improve performance. Please change the configuration as follows (which degenerates to SDM) and re-train and evaluate the model to see results.
+    *  Cascading more iterations cannot improve performance. Please change the configuration as follows (which degenerates to SDM) and re-train and evaluate the model to see results.
   ```matlab
   config.stageTot = 1;
   config.regs.iterTot = 4; % or much bigger
   ```
-    2. We note finding similar shape examplars is a non-trivial task. See our results on the 565th samples (out of 689), which is exactly our Figure 1 in the paper. A plain SDM cannot find candidate shapes with big mouth.
+    *  We note finding similar shape examplars is a non-trivial task. See our results on the 565th samples (out of 689), which is exactly our Figure 1 in the paper. A plain SDM cannot find candidate shapes with big mouth.
  
 2. 
 
