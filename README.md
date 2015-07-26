@@ -28,14 +28,36 @@ Due to license issues, this implementation uses two publicly avaiable software p
 
 ## Installation
 1. Put all the required dependency packages under the `external` folder. Matlab compatible bainary files must exist. Please note we have put `vl_sift_toosimple.c` in the `codes_released/feat/SIFT` folder. Please put it into the directory of `external/vlfeat-0.9.20/toolbox/sift` before compiling (and hence its relative Matlab compatible binary file would appear after compiling). This would slightly speed up sift extraction.
-2. Put all the 3148 (for training) + 689 (for testing) in the `data` folder. All images could be downloaded at [IBUG page](http://ibug.doc.ic.ac.uk/resources/facial-point-annotations/). Only LFPW, Helen, AFW and IBUG set are required. Please change one of the filename in IBUG set from `image_092 _01.jpg` to `image_092_01.jpg` to avoid space in file name.
+2. Put all the 3148 (for training) + 689 (for testing) in the `data` folder. All images could be downloaded at [IBUG page](http://ibug.doc.ic.ac.uk/resources/facial-point-annotations/). Only LFPW, Helen, AFW and IBUG set are required. Please change one of the filename in IBUG set from `image_092⋅_01.jpg` to `image_092_01.jpg` to avoid space in file name.
+
+## How to evaluate
+We have put the pre-trained models in the `model` folder. Users can directly run testing according to the following command to reproduce all the results in our paper:
+```matlab
+>>inferenceCFSS;
+```
+
+## How to train
+Users can reproduce these models by running the following command for training:
+```matlab
+>>getParametricModels;addAll;learnCFSS;
+```
+
+## How to compare with baseline
+Simply change two parameters can the codes degenerate to SDM, by
+```matlab
+config.stageTot = 1;
+config.regs.IterTot = 4; % or much bigger to see whether trivially adding more cascade woule improve the accuracy.
+```
+Training and testing command is similar to those above:
+```matlab
+>>getParametricModels;addAll;learnCFSS;inferenceCFSS;
+```
 
 ## Notes
 1. Training typically requests at least 20 GB of memory (based on the default parameters settings). Training codes are implemented with parallel machenism and a multicore CPU + parpool enabled Matlab environment can significantly reduce the training time.
 2. The bounding box given in the testing phase should be equally noisy with that in the training phase. According to our experience, the definition of **equally noisy** indicates: 1) no bias; and 2) equal variance. Bounding box variance larger than 1/3 of face size is regarded as very noisy. Under such circumstances, please consider to increase the searching stages into 4 stages if possible.
 3. 
 
-## How to compare with baseline
 
 
 ## Feedback
