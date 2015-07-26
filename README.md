@@ -40,12 +40,13 @@ We have uploaded our [demo video](http://youtu.be/S4PQ63duO-I) in youtube. The t
 
    Please note Matlab itself contains such two functions, and their interface is slightly different from those in libSVM. Please make sure you have include the path to libSVM.
    
- 2.
+2.
 
 ## Reviews and Rebuttal
+Reviewer 2 of our work raise several concerns. Here we would like to address his / her concerns by directly referring to our codes. Reviewer 2 can directly check our responses by performing several experiments according to our guide below.
 
 ## Feedback
-Suggestions and opinions of this work (both positive and negative) are greatly welcome. Please write an email to `zhshzhutah2@gmail.com` to contact the author.
+Suggestions and opinions of this work (both positive and negative) are greatly welcome. Please contact the author by sending email to `zhshzhutah2@gmail.com`.
 
 ## License
 BSD-3, see `LICENSE` file for details.
