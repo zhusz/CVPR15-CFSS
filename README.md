@@ -1,5 +1,5 @@
 # CVPR15-CFSS
-Note this repo is still under construction and would be expected to be finished on Monday.
+Released on July 25, 2015
 ------
 
 ## Description
