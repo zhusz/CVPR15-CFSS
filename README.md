@@ -47,20 +47,6 @@ Reviewer 2 of our work has raised several concerns. Here we would like to addres
   ```
     *  The functionality of each searching stage is acutally that the error distribution descripancy between training and testing set along the cascading series is rectified. The transformation is also re-evaluated.
     *  We note finding similar shape examplars is a non-trivial task. See our results on the 565th samples (out of 689), which is exactly our Figure 1 in the paper. A plain SDM cannot find candidate shapes with big mouth in this case. The shape is always trapped in local optima that the nose landmarks are stayed on the upper mouth.
- 
-2. No error bounds on the accuracy which makes it impossible to know whether or not the results are significantly better than previous approaches.
-
-   In rebuttal period we thought the reviewer might refer it as the distribution of errors on 689 samples. We replied that due to long tail error distribution, most previous works have larger std than mean. After reading one nice peer work [cGPRT](http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Lee_Face_Alignment_Using_2015_CVPR_paper.pdf), we believe the reviewer is referring to different trials of evaluation. Actually the only ramdomness of inference comes from initial shapes sampling at the beginning of each searching stage, and most sensitive one, from the first stage. Users can check this randomness simply by running our inference script for multiple times.
-
-3. It isn’t clear what constitutes poor initial conditions. Can these be clustered (i.e., easy, medium, hard, very hard). Alignment performance as a function of initial conditions would be useful and would probably show better performance over current methods. Qualitative examples would be useful. 
-
-   By comparing with pervious works, the initial conditions mostly refer mean shape initialization. For the cases like the 565th sample, mean shape initialization is just what we referred poor initial conditions, simply because it would lead to pool results trapped in local minima, as depicted in Figure 1(c) in our paper.
-   
-4. Have the authors considered the use of Gaussian Process Regression as an alternative solution to avoid overfitting? 
-
-   At the formulation period of this work, we did have thought of modeling the dynamic error using stochastic process. And the nice peer work [cGPRT](http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Lee_Face_Alignment_Using_2015_CVPR_paper.pdf) has exhibit a great solution in that way. But later we found that solving the problem in the engineering way can also achieve good results. One trick is applied, see the usage of the parameter `config.regs.samplingOffset = [NaN,1500,100];`.
-
-
 ## How do we beat SDM
 To validate our algorithm over the baseline SDM, users can directly do the experiments by simply changing two parameters in `addAll.m`. Please refer to the first question in the **Reviews and Rebuttal** section.
 
