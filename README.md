@@ -6,9 +6,6 @@ Released on July 25, 2015
 
 This is the implementation of Shizhan Zhu et al.'s CVPR-15 work [Face Alignment by Coarse-to-Fine Shape Searching](http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Zhu_Face_Alignment_by_2015_CVPR_paper.pdf). It is open source under BSD-3 license (see the `LICENSE` file). Codes can be used freely only for acedemic purpose. If you want to apply it to industrial products, please send an email to Shizhan Zhu at `zhshzhutah2@gmail.com` first.
 
-## Demo Video
-We have uploaded our [demo video](http://youtu.be/S4PQ63duO-I) in youtube. The trained model should perform with similar performance as shown in the demo video. Otherwise, the software might have been used in an inappropriate way.
-
 ## Citation
 If you use the codes as part of your research project, please cite our work as follows:
 ```
@@ -46,6 +43,9 @@ After testing, the variable `estimatedPose` would exist in the workspace, which 
 
 ## Formats
 Shape is represented as a 2n dimensional vector each in the format of `[x1,x2,...,xn,y1,y2,...,yn]`. Format of bounding box is `[left, right, top, bottom]`.
+
+## Demo Video
+We have uploaded our [demo video](http://youtu.be/S4PQ63duO-I) in youtube. The trained model should perform with similar accuracy as shown in the demo video. Otherwise, the software might have been used in an inappropriate way.
 
 ## How to speed up
 We need to point out again, in this implementation, we can only use the publicly available packages [VLFeat](https://github.com/vlfeat/vlfeat) and [LibSVM](https://github.com/cjlin1/libsvm) due to open source license issues. If you want a faster performance, you need to pay attention to some details like integral map sharing tricks. Classifiers should also be replaced by much faster ones like linear kernel.
