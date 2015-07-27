@@ -44,8 +44,6 @@ To do testing, simply use the following command:
 
 After testing, the variable `estimatedPose` would exist in the workspace, which is our final estimated facial shape.
 
-Pre-trained models have been put into the `model` folder. Please be reminded that functions inclusion is automatically done in `addAll.m` script. If you directly do testing, don't forget to add all required paths.
-
 ## Formats
 Shape is represented as a 2n dimensional vector each in the format of `[x1,x2,...,xn,y1,y2,...,yn]`. Format of bounding box is `[left, right, top, bottom]`.
 
