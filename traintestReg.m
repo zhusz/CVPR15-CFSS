@@ -57,7 +57,6 @@ im = cell(M,1);
 tg = zeros(M,2*n_pts);
 cu = zeros(M,2*n_pts);
 for i = 1:regsInfo.trainSampleTot(level)
-    fprintf('%d ',i);
     Ta = getTransRandomCross(selectPoses(targetPose,regsInfo.aug_eyes_id));
     cu((i-1)*m+1:i*m,:) = transPoseFwd(currentPose_train(:,:,i),Ta);
     tg((i-1)*m+1:i*m,:) = transPoseFwd(targetPose,Ta);
@@ -73,7 +72,6 @@ for i = 1:regsInfo.trainSampleTot(level)
         for j = (i-1)*m+1:i*m, im{j} = im{j}(:,end:-1:1); end;
     end;
 end;
-fprintf('\n');
 
 % 2B. Training iteration
 featInfo.scale = regsInfo.SIFTscale;
