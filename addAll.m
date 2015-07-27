@@ -31,9 +31,6 @@ regsInfo.dominantIterTot = [100 100 100];
 config.regs = regsInfo;
 
 % From sub-region center to Pr
-% probsInfo.semantic_id = [18 22 23 27 37 40 43 46 ...
-%     49 55 51 52 53 63 58 ...
-%     3 6 9 12 15];
 probsInfo.semantic_id = [18 22 23 27 37 40 43 46 49 55 51 52 53 58 9];
 probsInfo.fix_id = [3:7 11:15];
 probsInfo.sigmaCutoff = [0.25 0.25];
