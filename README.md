@@ -22,6 +22,7 @@ If you use the codes as part of your research project, please cite our work as f
 Due to license issues, this implementation uses two publicly avaiable software packages as opposed to our original implementation: 
 1. [VLFeat](https://github.com/vlfeat/vlfeat)
 2. [LibSVM](https://github.com/cjlin1/libsvm).
+Our implementation has been validated on vlfeat 0.9.20 and libSVM 3.20, with Matlab version R2013a (Unix).
 
 ## Installation
 1. Put all the required dependency packages under the `external` folder. Matlab compatible bainary files must exist. Please note we have put `vl_sift_toosimple.c` in the `codes_released/feat/SIFT` folder. Please put it into the directory of `external/vlfeat-0.x.xx/toolbox/sift` before compiling (and hence its relative Matlab compatible binary file would appear after compiling). This would slightly speed up sift extraction.
@@ -40,6 +41,8 @@ To do testing, simply use the following command:
 ```
 
 After testing, the variable `estimatedPose` would exist in the workspace, which is our final estimated facial shape.
+
+A pre-trained model can be downloaded from [here](http://mmlab.ie.cuhk.edu.hk/projects/CFSS/model.tar.gz). Extract the three model files and put them into the `model` folder and run the inference script. Be reminded that all functions path should be included.
 
 ## Baseline Experiment
 With following two simple configuraton changes (you can do it in `addAll.m`), our codes can degenerate to SDM. Users can observe results difference especially in the cases where large head pose or extreme expression (large mouth) exihibits.
