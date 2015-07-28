@@ -41,6 +41,14 @@ To do testing, simply use the following command:
 
 After testing, the variable `estimatedPose` would exist in the workspace, which is our final estimated facial shape.
 
+## Baseline Experiment
+With following two simple configuraton changes (you can do it in `addAll.m`), our codes can degenerate to SDM. Users can observe results difference especially in the cases where large head pose or extreme expression (large mouth) exihibits.
+
+```matlab
+config.stageTot = 1;
+config.regs.iterTot = 4;
+```
+
 ## Formats
 Shape is represented as a 2n dimensional vector each in the format of `[x1,x2,...,xn,y1,y2,...,yn]`. Format of bounding box is `[left, right, top, bottom]`.
 
