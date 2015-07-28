@@ -23,7 +23,7 @@ regsInfo.mirror = [17:-1:1 27:-1:18 28:31 36:-1:32 ...
     55:-1:49 60:-1:56 65:-1:61 68:-1:66];
 regsInfo.mirror = [regsInfo.mirror regsInfo.mirror+68];
 regsInfo.regressorInfo.trainMethod = @getLR_lcScale;
-regsInfo.regressorInfo.lambda = [50*25 50*30 50*20 50*20 50*20];
+regsInfo.regressorInfo.lambda = [50*25 50*30 50*35 50*40];
 regsInfo.regressorInfo.times = 20;
 
 regsInfo.dominantIterTot = [100 100 100];
