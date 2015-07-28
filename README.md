@@ -42,6 +42,8 @@ To do testing, simply use the following command:
 
 After testing, the variable `estimatedPose` would exist in the workspace, which is our final estimated facial shape.
 
+## Off-the-shelf Pre-trained Model
+
 A pre-trained model can be downloaded from [here](http://mmlab.ie.cuhk.edu.hk/projects/CFSS/model.tar.gz). Extract the three model files and put them into the `model` folder and run the inference script. Be reminded that all functions path should be included.
 
 ## Baseline Experiment
@@ -71,7 +73,7 @@ Suggestions and opinions of this work (both positive and negative) are greatly w
 ## Common Errors
 1. Why does the function `svmtrain` or `svmpredict` prompt errors?
 
-   Please note Matlab itself contains such two functions, and their interface is slightly different from those in libSVM. Please make sure you have include the path to libSVM.
+   Please note Matlab itself contains such two functions, and their interface is slightly different from those in libSVM. Please make sure you have included the path to libSVM.
 
 ## License
 BSD-3, see `LICENSE` file for details.
