@@ -71,20 +71,6 @@ for s = 1:2
 end;
 
 images = transImagesFwd(ori_images,Tb,priorsInfo.win_size,priorsInfo.win_size);
-% Testing
-% predicted = zeros(m,1);
-% F = zeros(m,priorsInfo.extractCellNum*priorsInfo.extractCellNum*31);
-% for i = 1:m
-%     F(i,:) = reshape(...
-%         vl_hog(single(images{i}(extractWindow(3):extractWindow(4),extractWindow(1):extractWindow(2))),extractCellSize),...
-%         [1,priorsInfo.extractCellNum*priorsInfo.extractCellNum*31]);
-% end;
-% for s = 1:2
-%     ind_test = find(set_id == s);
-%     predicted(ind_test) = predict(B{3-s},F(ind_test,:));
-% end;
-% 
-% save now0D; error here;
 
 priorModel.referenceShape = referenceShape;
 priorModel.B = B;
