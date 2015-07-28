@@ -45,7 +45,7 @@ After testing, the variable `estimatedPose` would exist in the workspace, which 
 A pre-trained model can be downloaded from [here](http://mmlab.ie.cuhk.edu.hk/projects/CFSS/model.tar.gz). Extract the three model files and put them into the `model` folder and run the inference script. Be reminded that all functions path should be included.
 
 ## Baseline Experiment
-With following two simple configuraton changes (you can do it in `addAll.m`), our codes can degenerate to SDM. Users can observe results difference especially in the cases where large head pose or extreme expression (large mouth) exihibits.
+With following two simple configuraton changes (you can do it in `addAll.m`), our codes can degenerate to SDM. Users can observe results difference especially in the cases where large head pose or extreme expression (e.g. large mouth) exihibits.
 
 ```matlab
 config.stageTot = 1;
