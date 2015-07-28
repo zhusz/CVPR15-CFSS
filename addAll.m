@@ -17,7 +17,7 @@ regsInfo.trainSampleTot = [10 10 10];
 regsInfo.testSampleTot = [10 10 10]; 
 regsInfo.aug_eyes_id = [37 46];
 regsInfo.win_size = config.win_size;
-regsInfo.SIFTscale = [12 6 6 6 6];
+regsInfo.SIFTscale = [12 6 6 6];
 regsInfo.mirror = [17:-1:1 27:-1:18 28:31 36:-1:32 ...
     46 45 44 43 48 47 40 39 38 37 42 41 ...
     55:-1:49 60:-1:56 65:-1:61 68:-1:66];
