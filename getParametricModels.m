@@ -3,7 +3,9 @@
 % Released on July 25, 2015
 
 clear;
-load ./data/raw_300W_release.mat bbox data nameList;
+load ./data/raw_300W_release.mat bbox data;
+bbox = bbox(1:3148,:); % can only use training set
+data = data(1:3148,:); % can only use training set
 m = size(data,1);
 n_pts = 68;
 %% Get mean_simple_face
