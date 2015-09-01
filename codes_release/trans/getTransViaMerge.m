@@ -14,6 +14,7 @@ function T = getTransViaMerge(win_size,varargin)
 m = length(varargin{1});
 n = length(varargin);
 for i = 2:n
+    varargin{i} = varargin{i}(:); % to force all Ts to be column vectors. 
     assert(m == length(varargin{i}));
 end;
 x_old = repmat([win_size/2,win_size/2,win_size/2,win_size/2-win_size/3],m,1);
