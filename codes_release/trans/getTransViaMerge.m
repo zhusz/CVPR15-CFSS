@@ -9,12 +9,12 @@ function T = getTransViaMerge(win_size,varargin)
 % T-s can only be similarity transform: rotate, scale, translate x/y
 % Note T-s must have strict order: rotate > scale > translate
 % rotate and scale only support: based on the center of patch (same win_size).
-% otherwise, don't feel suprised to see this function fuck you.
+% otherwise, don't feel suprised to see this function trouble you.
 
-m = size(varargin{1},1);
+m = length(varargin{1});
 n = length(varargin);
 for i = 2:n
-    assert(m == size(varargin{i},1));
+    assert(m == length(varargin{i}));
 end;
 x_old = repmat([win_size/2,win_size/2,win_size/2,win_size/2-win_size/3],m,1);
 x = transPoseFwd(x_old,varargin{1});
