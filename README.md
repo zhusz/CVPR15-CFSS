@@ -20,6 +20,9 @@ If you use the codes as part of your research project, please cite our work as f
 }
 ```
 
+## Bug Fixing Log
+1. Function [getTransViaMerge](https://github.com/zhusz/CVPR15-CFSS/blob/master/codes_release/trans/getTransViaMerge.m) has been updated to fix the prompting error `length(T) must be the same as size(oldPose,1)!`. For more details about the reason, please refer to the content of [Issue #01](https://github.com/zhusz/CVPR15-CFSS/issues/1). Here we would like to express our sincere thanks to [maxpy](https://github.com/maxpy) for providing precious discovery and suggestion to the problem.
+
 ## Dependency
 Due to license issues, this implementation uses two publicly avaiable software packages as opposed to our original implementation: 
 1. [VLFeat](https://github.com/vlfeat/vlfeat)
