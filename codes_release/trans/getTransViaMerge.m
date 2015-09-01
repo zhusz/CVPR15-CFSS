@@ -13,6 +13,7 @@ function T = getTransViaMerge(win_size,varargin)
 
 m = length(varargin{1});
 n = length(varargin);
+varargin{1} = varargin{1}(:); % to force all Ts to be column vectors. 
 for i = 2:n
     varargin{i} = varargin{i}(:); % to force all Ts to be column vectors. 
     assert(m == length(varargin{i}));
