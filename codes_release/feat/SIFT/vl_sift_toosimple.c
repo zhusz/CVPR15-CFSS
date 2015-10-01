@@ -202,7 +202,7 @@ mexFunction(int nout, mxArray *out[],
       break ;
 
     default :
-		mexPrintf("Fuck you!");
+		mexPrintf("Something is wrong!");
       abort() ;
     }
   }
