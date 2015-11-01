@@ -40,3 +40,12 @@ estimatedPose = currentPose;
 for level = testConf.stageTot:-1:1
     estimatedPose = transPoseInv(estimatedPose,T{level});
 end;
+
+load ./data/raw_300W_release.mat data;
+data = data(3149:end,:);
+delta = abs(estimatedPose - data);
+n = size(data,2) / 2;
+er_abs = mean(sqrt(delta(:,1:n).^2 + delta(:,n+1:2*n).^2), 2);
+eyes_dist = sqrt((mean(pose(:,[37:42]),2) - mean(pose(:,[43:48]),2)).^2 ...
+    + (mean(pose(:,[105:110]),2) - mean(pose(:,[111:116]),2)).^2);
+er = er_abs ./ eyes_dist;
