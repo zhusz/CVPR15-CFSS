@@ -4,6 +4,8 @@ Shizhan Zhu
 
 Released on July 25, 2015
 
+**I have updated the error evaluation codes to better facilitate comparison for future works. After running the inference script, the variable `er` would exist in the workspace, which is the error vector used for calculating the mean error and CED curve. Specifically, we use the mean of 6-point around eyes to calculate the inter-pupil distance.**
+
 ## Description
 
 This is the implementation of Shizhan Zhu et al.'s CVPR-15 work [Face Alignment by Coarse-to-Fine Shape Searching](http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Zhu_Face_Alignment_by_2015_CVPR_paper.pdf). It is open source under BSD-3 license (see the `LICENSE` file). Codes can be used freely only for academic purpose. If you want to apply it to industrial products, please send an email to Shizhan Zhu at `zhshzhutah2@gmail.com` first.
