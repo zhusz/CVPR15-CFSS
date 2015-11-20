@@ -4,8 +4,6 @@ Shizhan Zhu
 
 Released on July 25, 2015
 
-**The released off-the-shelf model is dedicated to the distribution of labeled boxes of IBUG. If you use the result of detector as the bounding box when tesing on the test set of 300W, you should retrain the model, in which the training set should be given the same bounding box distribution as your test set. Details of bounding box issues in retraining can refer to the second point of [Notes](https://github.com/zhusz/CVPR15-CFSS#notes). Directly applying the off-the-shelf model toward other bounding box distribution does not reach its best performance.**
-
 I have updated the error evaluation codes to better facilitate comparison for future works. After running the inference script, the variable `er` would exist in the workspace, which is the error vector used for calculating the mean error and CED curve. Specifically, we use the mean of 6-point around eyes to calculate the inter-pupil distance.
 
 ## Description
