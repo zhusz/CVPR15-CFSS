@@ -4,7 +4,9 @@ Shizhan Zhu
 
 Released on July 25, 2015
 
-I have updated the error evaluation codes to better facilitate comparison for future works. After running the inference script, the variable `er` would exist in the workspace, which is the error vector used for calculating the mean error and CED curve. Specifically, we use the mean of 6-point around eyes to calculate the inter-pupil distance.
+**The released off-the-shelf model is trained only dedicated to the distribution of labeled boxes of IBUG (as provided in our data folder). If you want to test this method with other distribution of bounding box even with the same 68 landmarks, you need to retrain the model, in which the training set should be given the same bounding box distribution as your test set. Details of the bounding box issues in retraining can refer to the second point of [Notes](https://github.com/zhusz/CVPR15-CFSS#notes).**
+
+**I have updated the error evaluation codes to better facilitate comparison for future works. After running the inference script, the variable `er` would exist in the workspace, which is the error vector used for calculating the mean error and CED curve. Specifically, we use the mean of 6-point around eyes to calculate the inter-pupil distance.**
 
 ## Description
 
