@@ -22,6 +22,7 @@ else
             [1 cols],'YData',[1 rows]);
     end
 end
+for i = 1:m, if size(newImages{i},1)~=rows || size(newImages{i},2)~=cols, newImages{i} = imresize(newImages{i},[rows,cols]);end;end;
 
 end
 
