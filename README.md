@@ -57,7 +57,7 @@ After testing, the variable `estimatedPose` would exist in the workspace, which 
 
 ## Off-the-shelf Pre-trained Model
 
-A pre-trained model can be downloaded from [here](http://mmlab.ie.cuhk.edu.hk/projects/CFSS/model.tar.gz). Extract the three model files and put them into the `model` folder and run the inference script. Be reminded that all functions path should be included. As aforementioned, is trained only dedicated to the distribution of labeled boxes of IBUG.
+A pre-trained model can be downloaded from [here](http://mmlab.ie.cuhk.edu.hk/projects/CFSS/model.tar.gz). Extract the three model files and put them into the `model` folder and run the inference script. Be reminded that all functions path should be included. As aforementioned, this model is trained only dedicated to the distribution of labeled boxes of IBUG.
 
 By research demands, we further release a CFSS model that is specifically trained for VJ (Matlab) face detection box. Download the model [here](https://www.dropbox.com/s/jvoylj8tpgo6yj4/CFSS_Model_VJ.tar.gz).
 
