@@ -4,7 +4,7 @@ Shizhan Zhu
 
 Released on July 25, 2015
 
-**By research demands, we further release a CFSS model that is specifically trained for VJ face detection box (Matlab version). Download the model [here](https://www.dropbox.com/s/jvoylj8tpgo6yj4/CFSS_Model_VJ.tar.gz).**
+**By research demands, we further release a CFSS model that is specifically trained for VJ (Matlab) face detection box. Download the model [here](https://www.dropbox.com/s/jvoylj8tpgo6yj4/CFSS_Model_VJ.tar.gz).**
 
 **A comprehensive evaluation of our approach (CFSS) by IBUG [here](https://arxiv.org/pdf/1603.06015.pdf)**.
 
@@ -57,7 +57,9 @@ After testing, the variable `estimatedPose` would exist in the workspace, which 
 
 ## Off-the-shelf Pre-trained Model
 
-A pre-trained model can be downloaded from [here](http://mmlab.ie.cuhk.edu.hk/projects/CFSS/model.tar.gz). Extract the three model files and put them into the `model` folder and run the inference script. Be reminded that all functions path should be included.
+A pre-trained model can be downloaded from [here](http://mmlab.ie.cuhk.edu.hk/projects/CFSS/model.tar.gz). Extract the three model files and put them into the `model` folder and run the inference script. Be reminded that all functions path should be included. As aforementioned, is trained only dedicated to the distribution of labeled boxes of IBUG.
+
+By research demands, we further release a CFSS model that is specifically trained for VJ (Matlab) face detection box. Download the model [here](https://www.dropbox.com/s/jvoylj8tpgo6yj4/CFSS_Model_VJ.tar.gz).
 
 ## Baseline Experiment
 With following two simple configuraton changes (you can do it in `addAll.m`), our codes can degenerate to SDM. Users can observe results difference especially in the cases where large head pose or extreme expression (e.g. large mouth) exihibits.
