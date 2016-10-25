@@ -4,9 +4,9 @@ Shizhan Zhu
 
 Released on July 25, 2015
 
-**By research demands, we further release a model that is specifically trained for VJ face detection box (Matlab version). Download the model [here](https://www.dropbox.com/s/jvoylj8tpgo6yj4/CFSS_Model_VJ.tar.gz).**
+**By research demands, we further release a CFSS model that is specifically trained for VJ face detection box (Matlab version). Download the model [here](https://www.dropbox.com/s/jvoylj8tpgo6yj4/CFSS_Model_VJ.tar.gz).**
 
-**A comprehensive evaluation of our approach (CFSS) by IBUG [here](https://arxiv.org/pdf/1603.06015.pdf)**
+**A comprehensive evaluation of our approach (CFSS) by IBUG [here](https://arxiv.org/pdf/1603.06015.pdf)**.
 
 **The released off-the-shelf model is trained only dedicated to the distribution of labeled boxes of IBUG provided by the [offical site](http://ibug.doc.ic.ac.uk/resources/300-W/) (as stored in our data folder). If you want to test this method with other distribution of bounding box even with the same 68 landmarks, you need to retrain the model, in which the training set should be given the same bounding box distribution as your test set (rather than the existing one). Details of the bounding box issues in retraining can refer to the second point of [Notes](https://github.com/zhusz/CVPR15-CFSS#notes).**
 
