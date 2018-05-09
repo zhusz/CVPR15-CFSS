@@ -15,18 +15,18 @@ m = size(pose1,1);
 assert(size(pose2,1)==m);
 assert(size(pose2,2)==2*n);
 
-if (m<100) || (matlabpool('size')==0)
-    T = arrayfun(@(i)cp2tform(reshape(pose1(i,:),n,2),reshape(pose2(i,:),n,2),'nonreflective similarity'),1:m);
-    if m>=100
-        warning('Please launch matlabpool to speed up your program!');
-    end
-else
+% if (m<100) || (matlabpool('size')==0)
+%     T = arrayfun(@(i)cp2tform(reshape(pose1(i,:),n,2),reshape(pose2(i,:),n,2),'nonreflective similarity'),1:m);
+%     if m>=100
+%         warning('Please launch matlabpool to speed up your program!');
+%     end
+% else
     T = cell(m,1);
     parfor i = 1:m
         T{i} = cp2tform(reshape(pose1(i,:),n,2),reshape(pose2(i,:),n,2),'nonreflective similarity');
     end
     T = cell2mat(T);
-end
+% end
 
 
 end

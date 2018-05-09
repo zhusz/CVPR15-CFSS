@@ -4,8 +4,8 @@
 
 clearvars -except config testConf;
 if ~exist('config','var'), error('Please run addAll.m first!'); end;
-load ./data/raw_300W_release.mat bbox data nameList;
-[bbox,data,nameList] = indexingData([1:3148],bbox,data,nameList); % Training
+load ./data/raw.mat bbox data nameList;
+[bbox,data,nameList] = indexingData([1:7500],bbox,data,nameList); % Training
 img_root = './imageSource/';
 load ./model/mean_simple_face.mat mean_simple_face;
 load ./model/target_simple_face.mat target_simple_face;

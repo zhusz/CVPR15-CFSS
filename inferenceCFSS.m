@@ -3,8 +3,8 @@
 % Released on July 25, 2015
 
 clear;
-load ./data/raw_300W_release.mat bbox nameList;
-[bbox,nameList] = indexingData(3149:3837,bbox,nameList); % Testing
+load ./data/raw.mat bbox nameList;
+[bbox,nameList] = indexingData(7501:10000,bbox,nameList); % Testing
 img_root = './imageSource/';
 load ./model/mean_simple_face.mat mean_simple_face;
 load ./model/target_simple_face.mat target_simple_face;
@@ -41,11 +41,11 @@ for level = testConf.stageTot:-1:1
     estimatedPose = transPoseInv(estimatedPose,T{level});
 end;
 
-load ./data/raw_300W_release.mat data;
-data = data(3149:end,:);
+load ./data/raw.mat data;
+data = data(7501:10000,:);
 delta = abs(estimatedPose - data);
 n = size(data,2) / 2;
 er_abs = mean(sqrt(delta(:,1:n).^2 + delta(:,n+1:2*n).^2), 2);
-eyes_dist = sqrt((mean(data(:,[37:42]),2) - mean(data(:,[43:48]),2)).^2 ...
-    + (mean(data(:,[105:110]),2) - mean(data(:,[111:116]),2)).^2);
+eyes_dist = sqrt((mean(data(:,[97]),2) - mean(data(:,[98]),2)).^2 ...
+    + (mean(data(:,[195]),2) - mean(data(:,[196]),2)).^2);
 er = er_abs ./ eyes_dist;

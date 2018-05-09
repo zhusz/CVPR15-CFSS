@@ -18,18 +18,18 @@ n = n / 2;
 ind_nan = find(isnan(oldPose));
 oldPose(ind_nan) = 0;
 
-if (m<100) || (matlabpool('size')==0)
-    newPose = arrayfun(@(i)reshape(tformfwd(T(i),reshape(oldPose(i,:),n,2)),1,2*n),1:m,'UniformOutput',false);
-    newPose = cell2mat(newPose(:));
-    if m>=100
-        warning('Please launch matlabpool to speed up your program!');
-    end
-else
+% if (m<100) || (matlabpool('size')==0)
+%     newPose = arrayfun(@(i)reshape(tformfwd(T(i),reshape(oldPose(i,:),n,2)),1,2*n),1:m,'UniformOutput',false);
+%     newPose = cell2mat(newPose(:));
+%     if m>=100
+%         warning('Please launch matlabpool to speed up your program!');
+%     end
+% else
     newPose = zeros(size(oldPose));
     parfor i = 1:m
         newPose(i,:) = reshape(tformfwd(T(i),reshape(oldPose(i,:),n,2)),1,2*n);
     end
-end
+% end
 newPose(ind_nan) = NaN;
 
 end

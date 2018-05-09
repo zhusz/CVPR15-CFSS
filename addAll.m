@@ -12,16 +12,20 @@ config.win_size = 250;
 
 % From Pr to sub-region center
 regsInfo.iterTot = [3 3 3];
-regsInfo.samplingOffset = [NaN,1500,100];
+regsInfo.samplingOffset = [NaN, 3750, 250];  % [NaN,1500,100];  % This hyper-param should be proportional to # training set
 regsInfo.trainSampleTot = [10 10 10]; 
 regsInfo.testSampleTot = [10 10 10]; 
-regsInfo.aug_eyes_id = [37 46];
+regsInfo.aug_eyes_id = [61 73];  % [37 46]; Use the new index according to your new dataset. 1-based matlab.
 regsInfo.win_size = config.win_size;
 regsInfo.SIFTscale = [12 6 6 6];
-regsInfo.mirror = [17:-1:1 27:-1:18 28:31 36:-1:32 ...
-    46 45 44 43 48 47 40 39 38 37 42 41 ...
-    55:-1:49 60:-1:56 65:-1:61 68:-1:66];
-regsInfo.mirror = [regsInfo.mirror regsInfo.mirror+68];
+regsInfo.mirror = [33:-1:1 47 46 45 44 43 51 50 49 48 38 37 36 35 34 42 41 40 39 ...
+    52:55 60:-1:56 73 72 71 70 69 76 75 74 65 64 63 62 61 68 67 66 ...
+    83:-1:77 88:-1:84 93:-1:89 96:-1:94 98 97];
+% Use the new index according to your new dataset. 1-based matlab.
+% regsInfo.mirror = [17:-1:1 27:-1:18 28:31 36:-1:32 ...
+%     46 45 44 43 48 47 40 39 38 37 42 41 ...
+%     55:-1:49 60:-1:56 65:-1:61 68:-1:66];
+regsInfo.mirror = [regsInfo.mirror regsInfo.mirror+length(regsInfo.mirror)];
 regsInfo.regressorInfo.trainMethod = @getLR_lcScale;
 regsInfo.regressorInfo.lambda = [50*25 50*30 50*20 50*20];
 regsInfo.regressorInfo.times = 20;
@@ -31,8 +35,13 @@ regsInfo.dominantIterTot = [100 100 100];
 config.regs = regsInfo;
 
 % From sub-region center to Pr
-probsInfo.semantic_id = [18 22 23 27 37 40 43 46 49 55 51 52 53 58 9];
-probsInfo.fix_id = [3:7 11:15];
+
+probsInfo.semantic_id = [34 39 51 47 61 65 69 73 77 83 79 80 81 86 17];
+probsInfo.fix_id = [3 6 9 12 15 19 22 25 28 31];
+% Readjust according to the new landmark protocol.
+% probsInfo.semantic_id = [18 22 23 27 37 40 43 46 49 55 51 52 53 58 9];
+% probsInfo.fix_id = [3:7 11:15];
+
 probsInfo.sigmaCutoff = [0.25 0.25];
 
 probsInfo.SVCradius = [20 10];
@@ -53,7 +62,7 @@ config.probs = probsInfo;
 % Prior model
 priorsInfo.augTimes = 10;
 priorsInfo.maxRoll = 45;
-priorsInfo.nose_id = 34;
+priorsInfo.nose_id = 58; % readjusted 34;
 priorsInfo.noseUpLength = 15;
 priorsInfo.rotationCenter = [0.5 0.35]; %(x,y)
 priorsInfo.win_size = config.win_size;
