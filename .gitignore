@@ -65,6 +65,7 @@ log*
 # Compiled MATLAB
 *.mex*
 *.mat
+!data/raw.mat
 !codes/vis_face_alignment/std_series/cir/*.mat
 
 # IPython notebook checkpoints
