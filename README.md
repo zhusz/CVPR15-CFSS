@@ -4,6 +4,8 @@ Shizhan Zhu
 
 Released on July 25, 2015
 
+**If you want to use our code to train on another dataset (e.g. the [WFLW dataset](https://arxiv.org/abs/1805.10483)) please have a look at this:** We post our full codes for training on the [WFLW dataset](https://arxiv.org/abs/1805.10483) for comparison with future works. Please follow [this](https://github.com/zhusz/CVPR15-CFSS/tree/wflw) for the codes (a new branch). Particularly, please refer to [here](https://github.com/zhusz/CVPR15-CFSS/compare/d54524ae42f77602864809d02ee8f76b42306fcd...8278f5a6d3ce75cbc9961424978f6a97ecb6d93e) for a detailed instruction on how to modify the hyperparameters inside addAll.m (mainly readjusting the hyperparameters according to new landmark protocols and new dataset size).
+
 **By research demands, we further release a CFSS model that is specifically trained for VJ (Matlab) face detection box. Download the model [here](https://www.dropbox.com/s/jvoylj8tpgo6yj4/CFSS_Model_VJ.tar.gz).**
 
 **A comprehensive evaluation of our approach (CFSS) by IBUG [here](https://arxiv.org/pdf/1603.06015.pdf)**.
